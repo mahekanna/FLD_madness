@@ -1,0 +1,27 @@
+2025-03-27 18:07:34,549 - __main__ - INFO - Google Drive path found: G:\My Drive\FLD-FIB-CYCLE
+2025-03-27 18:07:34,549 - __main__ - INFO - Created directory: ./data/cache
+2025-03-27 18:07:34,549 - __main__ - INFO - Created directory: ./logs
+2025-03-27 18:07:34,549 - __main__ - INFO - Created default symbols file: ./data/symbols/default_symbols.csv
+2025-03-27 18:07:55,861 - core.cycle_detection - INFO - GPU acceleration available with CuPy
+2025-03-27 18:07:56,985 - web.app - WARNING - Could not import Google Drive integration: No module named 'integration.google_drive_integration'
+2025-03-27 18:07:56,986 - web.app - WARNING - Google Drive not accessible, using local storage
+2025-03-27 18:07:56,987 - tvDatafeed.main - WARNING - you are using nologin method, data you access may be limited
+2025-03-27 18:07:56,987 - core.data_manager - INFO - TvDatafeed client initialized
+2025-03-27 18:07:56,987 - tvDatafeed.main - WARNING - you are using nologin method, data you access may be limited
+2025-03-27 18:07:56,988 - core.data_manager - INFO - TvDatafeed client initialized
+2025-03-27 18:07:56,988 - core.scanner - INFO - Scanner initialized with exchange NSE
+2025-03-27 18:07:57,090 - core.data_manager - INFO - Loaded 5 symbols from ./data/symbols/default_symbols.csv
+2025-03-27 18:07:57,259 - __main__ - ERROR - Error starting web application: register_callbacks() got an unexpected keyword argument 'export_engine'
+2025-03-27 19:19:56,622 - core.cycle_detection - INFO - GPU acceleration available with CuPy
+2025-03-27 19:19:56,973 - tvDatafeed.main - WARNING - you are using nologin method, data you access may be limited
+2025-03-27 19:19:56,973 - core.data_manager - INFO - TvDatafeed client initialized
+2025-03-27 19:19:56,973 - tvDatafeed.main - WARNING - you are using nologin method, data you access may be limited
+2025-03-27 19:19:56,973 - core.data_manager - INFO - TvDatafeed client initialized
+2025-03-27 19:19:56,974 - core.scanner - INFO - Scanner initialized with exchange NSE
+2025-03-27 19:19:56,974 - __main__ - INFO - Scanning NIFTY on daily timeframe...
+2025-03-27 19:19:56,975 - core.data_manager - INFO - Fetching 5000 bars of NIFTY daily data from NSE
+2025-03-27 19:19:58,113 - core.data_manager - INFO - Successfully fetched 5000 bars for NIFTY
+2025-03-27 19:19:58,158 - core.scanner - INFO - Analysis completed for NIFTY on daily: Neutral (Low)
+2025-03-27 19:19:58,780 - core.scanner - ERROR - Error saving chart to Google Drive: No module named 'integration.google_drive_integration'
+2025-03-27 19:19:58,789 - integration.export_engine - INFO - Exported 1 results to ./data/reports\NIFTY_daily_analysis.csv
+2025-03-27 19:19:58,790 - integration.export_engine - ERROR - Error saving to Google Drive: No module named 'integration.google_drive_integration'

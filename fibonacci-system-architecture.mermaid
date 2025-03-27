@@ -1,0 +1,71 @@
+flowchart TD
+    subgraph CoreEngine ["Core Engine"]
+        FFT[FFT Cycle Detection] --> CycleValidation[Cycle Validation]
+        FFT --> HarmonicAnalysis[Harmonic Analysis]
+        CycleValidation --> FLDCalculation[FLD Calculation]
+        FLDCalculation --> CrossoverDetection[Crossover Detection]
+        CrossoverDetection --> SignalGeneration[Signal Generation]
+        HarmonicAnalysis --> CycleParameters[Cycle Parameters]
+        CycleParameters --> FFT
+        
+        FFT -.-> GPUAcceleration[GPU Acceleration]
+        FFT -.-> WaveletAnalysis[Wavelet Analysis]
+        
+        MarketRegime[Market Regime Detection] --> SignalGeneration
+        VolumeAnalysis[Volume Analysis] --> SignalGeneration
+        
+        DataManager[Data Manager] --> FFT
+        DataManager --> CacheSystem[Cache System]
+    end
+    
+    subgraph WebApplication ["Web Application"]
+        Dashboard[Dashboard] --> SingleSymbol[Single Symbol Analysis]
+        Dashboard --> BatchScan[Batch Scan]
+        Dashboard --> Reports[Reports]
+        Dashboard --> Settings[Settings]
+        
+        SingleSymbol --> InteractiveCharts[Interactive Charts]
+        BatchScan --> ScanResults[Scan Results]
+        ScanResults --> ResultsStorage[Results Storage]
+        ResultsStorage --> Reports
+        
+        Settings --> UserPreferences[User Preferences]
+        Settings --> SystemConfig[System Configuration]
+        
+        Authentication[Authentication] --> Dashboard
+    end
+    
+    subgraph AdvancedAnalysis ["Advanced Analysis"]
+        MultiTimeframe[Multi-Timeframe Analysis] --> TimeframeAlignment[Timeframe Alignment Score]
+        MultiTimeframe --> CompositeCycles[Composite Cycle Strength]
+        
+        TradingSignals[Trading Signals] --> EntryExitPoints[Entry/Exit Points]
+        TradingSignals --> RiskManagement[Risk Management]
+        
+        BacktestEngine[Backtest Engine] --> PerformanceMetrics[Performance Metrics]
+        BacktestEngine --> StrategyOptimization[Strategy Optimization]
+        
+        MarketBreadth[Market Breadth Analysis] --> TradingSignals
+    end
+    
+    subgraph IntegrationLayer ["Integration Layer"]
+        APIGateway[API Gateway]
+        TelegramBot[Telegram Bot]
+        DataProviders[Data Providers]
+        NotificationSystem[Notification System]
+        ExportEngine[Export Engine]
+        
+        TelegramBot --> NotificationSystem
+        APIGateway --> DataProviders
+    end
+    
+    CoreEngine --> WebApplication
+    CoreEngine --> AdvancedAnalysis
+    WebApplication --> IntegrationLayer
+    AdvancedAnalysis --> IntegrationLayer
+    DataProviders --> DataManager
+    
+    style CoreEngine fill:#f9f7ed,stroke:#404040,stroke-width:2px
+    style WebApplication fill:#edf9ed,stroke:#404040,stroke-width:2px
+    style AdvancedAnalysis fill:#edeef9,stroke:#404040,stroke-width:2px
+    style IntegrationLayer fill:#f9edec,stroke:#404040,stroke-width:2px
